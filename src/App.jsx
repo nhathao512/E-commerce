@@ -1,7 +1,17 @@
-import "./App.css";
+import MyFooter from "@components/Footer/Footer";
+import MyHeader from "@components/Header/Header";
+import MainLayout from "@components/Layout/Layout";
 
 function App() {
-  return <div>Ecommerce</div>;
+  return (
+    <>
+      <MainLayout>
+        <MyHeader />
+          Content
+        <MyFooter />
+      </MainLayout>
+    </>
+  );
 }
 
 export default App;
