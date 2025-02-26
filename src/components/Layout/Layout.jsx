@@ -1,7 +1,7 @@
-function MainLayout({children}) {
+function MainLayout({ children }) {
   return (
-    <main>
-      <div>{children}</div>
+    <main className="flex justify-center">
+      <div className="w-[1250px] h-screen">{children}</div>
     </main>
   );
 }

@@ -1,3 +1,15 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Ensure Tailwind CSS is installed and configured correctly */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer components {
+  .menu::after {
+    content: "";
+    @apply block w-full h-[3px] bg-[#333] mt-[5px] origin-right scale-0 opacity-0 transition-transform duration-300;
+  }
+
+  .menu:hover::after {
+    @apply scale-100 opacity-100;
+  }
+}
