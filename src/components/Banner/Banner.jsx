@@ -1,3 +1,5 @@
+import Button from "../Button/Button";
+
 function Banner() {
   return (
     <div className="min-h-[750px] bg-banner bg-no-repeat bg-cover flex items-center justify-center gap-[0px]">
@@ -8,7 +10,7 @@ function Banner() {
         <div className="text-[#555] text-[16px] font-normal mb-[25px]">
           Make yours celebrations even more special this years with beautiful.
         </div>
-        <button>Go to shop</button>
+        <Button content={"Go to shop"} />
       </div>
     </div>
   );

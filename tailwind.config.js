@@ -9,6 +9,9 @@ export default {
       backgroundImage: {
         banner: "url('/src/assets/images/Banner.jpeg')",
       },
+      zIndex: {
+        "-1": "-1",
+      },
     },
   },
   plugins: [],
