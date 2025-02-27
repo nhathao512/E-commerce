@@ -8,7 +8,7 @@ import cartIcon from "@icons/svgs/carticon.svg";
 
 function MyHeader() {
   return (
-    <div className="flex justify-center items-center gap-[0px] bg-[#f5f5f5]">
+    <div className="flex justify-center items-center gap-[0px] absolute top-0 left-0 right-0">
       <div className="flex w-[1250px] items-center justify-between h-[83px]">
         <div className="flex justify-center items-center gap-[20px] cursor-pointer">
           <div className="flex justify-center items-center gap-[10px]">
