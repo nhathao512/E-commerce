@@ -4,7 +4,7 @@ import Banner from "@components/Banner/Banner";
 function HomePage() {
   return (
     <div>
-      <div className="font-robotoMono relative z-[-1]">
+      <div className="font-robotoMono relative">
         <MyHeader />
         <Banner />
       </div>
