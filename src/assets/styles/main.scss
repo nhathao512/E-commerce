@@ -1,0 +1,4 @@
+@use "normalize.css";
+@use "./variable.module.scss" as *; // Import all variables without prefixing
+@use "./mixin.module.scss" as mixin; // Use `mixin` as prefix for mixins
+@use "./global.module.scss";

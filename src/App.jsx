@@ -1,16 +1,31 @@
-import MyFooter from "@components/Footer/Footer";
-import MainLayout from "@components/Layout/Layout";
-import HomePage from "./components/HomePage/HomePage";
-import Info from "./components/Info/Info";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import routers from '@/routers/routers';
+import { Suspense } from 'react';
+import SideBar from '@components/SideBar/SideBar';
+import { SideBarProvider } from '@/contexts/SideBarProvider';
 
 function App() {
   return (
-    <>
-      <HomePage />
-      <Info />
-      {/* Content
-        <MyFooter /> */}
-    </>
+    <SideBarProvider>
+      <SideBar />
+
+      <BrowserRouter>
+        <Suspense fallback={<div>Loading...</div>}>
+          {/* hiệu ứng loading */}
+          <Routes>
+            {
+              routers.map((item, index) => {
+                return (
+                  <Route
+                    key={index}
+                    path={item.path}
+                    element={<item.component />} />
+                );
+              })}
+          </Routes>
+        </Suspense>
+      </BrowserRouter>
+    </SideBarProvider>
   );
 }
 

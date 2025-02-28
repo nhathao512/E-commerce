@@ -1,0 +1,32 @@
+// @use '../../assets/styles/mixin.module.scss' as mixin;
+// @include mixin.flex-box_custom(center, center, 0px); 
+.container {
+    margin-bottom: 20px;
+
+    .labelInput {
+        font-size: 14px;
+        color: #222;
+        margin-bottom: 5px;
+    }
+
+    .boxInput {
+        width: 100%;
+
+        position: relative;
+
+        input {
+            width: 100%;
+            border: 1px solid #e1e1e1;
+            outline: none;
+            padding: 10px 0 10px 10px;
+        }
+
+        .boxIcon {
+            position: absolute;
+            top: 12px;
+            right: 0;
+            cursor: pointer;
+        }
+    }
+}
+

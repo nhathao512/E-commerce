@@ -1,0 +1,30 @@
+@use '../../assets/styles/mixin.module.scss' as mixin;
+
+.container {
+    @include mixin.flex-box_custom(center, center, 0px);
+
+    background-image: url(../../assets/images/Banner_Ecommer.jpeg); 
+    min-height: 750px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.content {
+    @include mixin.flex-box_custom(center, center, 10px);
+
+    flex-direction: column;
+}
+
+.title {
+    font-size: 42px;
+    color: #222;
+    font-weight: 400;
+    margin: 15px;
+}
+
+.des {
+    color : #555;
+    font-weight: 400;
+    margin-bottom: 25px;
+}

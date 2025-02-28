@@ -1,9 +1,15 @@
+import styles from './styles.module.scss';
+
 function MainLayout({ children }) {
-  return (
-    <main className="flex justify-center">
-      <div className="w-[1250px] h-screen">{children}</div>
-    </main>
-  );
+
+    const { wrapLayout, container } = styles;
+
+
+    return (
+        <main className={wrapLayout}>
+            <div className={container}>{children}</div>
+        </main>
+    );
 }
 
 export default MainLayout;

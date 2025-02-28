@@ -1,0 +1,35 @@
+@use '../../assets/styles/mixin.module.scss' as mixin;
+
+.container {
+    height: 144px;
+    background-color: #333333;
+    color: #555555;
+    margin-top: -75px;
+    padding: 20px 50px;
+    @include mixin.flex-box_custom(space-between, center, 0px);
+}
+
+.containerCard {
+    @include mixin.flex-box_custom(center, center, 18px);
+    width: 280px;
+    height: 104px;
+    
+}
+
+.containerContent {
+    @include mixin.flex-box_custom(center, flex-start, 13px);
+    flex-direction: column;
+    color: #f0eeee;
+    font-weight: 300;
+    
+    .title {
+        font-size: 17px;
+    }
+    .description {
+        font-size: 16px;
+    }
+}
+
+
+
+

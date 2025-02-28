@@ -1,0 +1,29 @@
+@use '../../assets/styles/mixin.module.scss' as mixin;
+.container {
+    margin-top: 100px;
+    @include mixin.flex-box_custom(space-between, center, 0px); 
+
+    .title {
+        font-size: 35px;
+        color: #222;
+        font-weight: 400;
+        text-align: center;
+    }
+
+    .des {
+        font-size: 16px;
+        color: #555;
+        font-weight: 300;
+        text-align: center;
+        margin-top: 10px;
+        width: 360px;
+        line-height: 30px;
+    }
+
+    .boxBtn {
+        margin-top: 30px;
+        @include mixin.flex-box_custom(center, center, 0px); 
+    }   
+    
+    
+}

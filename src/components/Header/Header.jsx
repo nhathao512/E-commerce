@@ -1,52 +1,101 @@
 import BoxIcon from "./BoxIcon/BoxIcon";
 import { dataBoxIcon, dataMenu } from "./constants";
 import Menu from "./Menu/Menu";
-import Logo from "@icons/images/Logo-retina.png";
-import reloadIcon from "@icons/svgs/reloadicon.svg";
-import heartIcon from "@icons/svgs/hearticon.svg";
-import cartIcon from "@icons/svgs/carticon.svg";
+import styles from "./styles.module.scss";
+import reloadIcon from "@icon/svgs/reloadIcon.svg";
+import heartIcon from "@icon/svgs/heartIcon.svg";
+import cartIcon from "@icon/svgs/cartIcon.svg";
+import useScrollHandling from "@components/hooks/useScrollHandling";
+import { useContext, useEffect, useState } from "react";
+import classNames from "classnames";
+import { SideBarContext } from "@/contexts/SideBarProvider";
 
 function MyHeader() {
+  const {
+    containerBoxIcon,
+    containerMenu,
+    containerHeader,
+    containerBox,
+    container,
+    menu,
+    fixedHeader,
+    topHeader,
+  } = styles;
+
+  const { scrollPosition } = useScrollHandling();
+
+  const [fixedPosition, setFixedPosition] = useState(false);
+
+  const { isOpen, setIsOpen } = useContext(SideBarContext);
+
+  console.log(isOpen);
+
+  useEffect(() => {
+    // if(scrollPosition > 80){
+    //     setFixedPosition(true);
+    // }else{
+    //     setFixedPosition(false);
+    // }
+    setFixedPosition(scrollPosition > 80 ? true : false);
+  }, [scrollPosition]);
+
   return (
-    <div className="flex justify-center items-center gap-[0px] absolute top-0 left-0 right-0">
-      <div className="flex w-[1250px] items-center justify-between h-[83px]">
-        <div className="flex justify-center items-center gap-[20px] cursor-pointer">
-          <div className="flex justify-center items-center gap-[10px]">
-            {dataBoxIcon.map((item) => {
-              return <BoxIcon type={item.type} href={item.href} />;
+    <div
+      className={classNames(container, topHeader, {
+        [fixedHeader]: fixedPosition,
+      })}
+    >
+      <div className={containerHeader}>
+        <div className={containerBox}>
+          <div className={containerBoxIcon}>
+            {dataBoxIcon.map((item, index) => {
+              return (
+                <BoxIcon
+                  key={index}
+                  type={item.type}
+                  href={item.href}
+                  className={menu}
+                />
+              );
             })}
           </div>
-          <div className="flex justify-center items-center gap-[40px]">
-            {dataMenu.slice(0, 3).map((item) => {
-              return <Menu content={item.content} href={item.href} />;
+          <div className={containerMenu}>
+            {dataMenu.slice(0, 3).map((item, index) => {
+              return (
+                <Menu
+                  key={index}
+                  content={item.content}
+                  href={item.href}
+                  className={menu}
+                />
+              );
             })}
           </div>
         </div>
         <div>
           <img
-            className="w-[153px] h-[53px] cursor-pointer"
-            src={Logo}
-            alt="Logo"
+            src="https://xstore.b-cdn.net/elementor2/marseille04/wp-content/uploads/sites/2/2022/12/Logo-retina.png"
+            alt="logo"
+            style={{ width: "153px", height: "53px", cursor: "pointer" }}
           />
         </div>
-        <div className="flex justify-center items-center gap-[20px] cursor-pointer">
-          <div className="flex justify-center items-center gap-[40px] ">
-            {dataMenu.slice(3, dataMenu.length).map((item) => {
-              return <Menu content={item.content} href={item.href} />;
+        <div className={containerBox}>
+          <div className={containerMenu}>
+            {dataMenu.slice(3, dataMenu.length).map((item, index) => {
+              return (
+                <Menu
+                  key={index + 3}
+                  content={item.content}
+                  href={item.href}
+                  setIsOpen={setIsOpen}
+                />
+              );
             })}
           </div>
-          <div className="flex justify-center items-center gap-[10px]">
-            <img
-              className="w-[26px] h-[26px]"
-              src={reloadIcon}
-              alt="reloadIcon"
-            />
-            <img
-              className="w-[26px] h-[26px]"
-              src={heartIcon}
-              alt="heartIcon"
-            />
-            <img className="w-[26px] h-[26px]" src={cartIcon} alt="cartIcon" />
+          <div className={containerBoxIcon}>
+            <img width={26} height={26} src={reloadIcon} alt="" />
+            <img width={26} height={26} src={heartIcon} alt="" />
+            <img width={26} height={26} src={cartIcon} alt="" />
           </div>
         </div>
       </div>

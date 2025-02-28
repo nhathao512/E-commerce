@@ -1,23 +1,22 @@
-import MainLayout from "../Layout/Layout";
-import { dataInfo } from "./constants";
-import InfoCart from "./InfoCart/InfoCart";
+import InfoCard from "@components/Info/InfoCard";
+import { dataInfo } from './constants';
+import MainLayout from "@components/Layout/Layout";
+import styles from './styles.module.scss'
 
 function Info() {
-  return (
-    <MainLayout className="font-robotoMono">
-      <div className="flex justify-between items-center relative z-50 gap-[0px] h-[144px] bg-[#333] mt-[-75px] py-[20px] px-[55px] ">
-        {dataInfo.map((item) => {
-          return (
-            <InfoCart
-              title={item.title}
-              description={item.description}
-              src={item.src}
-            />
-          );
-        })}
-      </div>
-    </MainLayout>
-  );
+    const { container } = styles;
+
+    return (
+
+        <MainLayout>
+            <div className={container}>
+                {dataInfo.map((item) => {
+                    return <InfoCard content={item.title} des={item.descripstion} src={item.src} />;
+                })}
+            </div>
+        </MainLayout>
+
+    );
 }
 
 export default Info;

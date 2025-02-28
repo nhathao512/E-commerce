@@ -1,0 +1,20 @@
+@use '../../assets/styles/mixin.module.scss' as mixin;
+
+.container {
+    background-color: #363636;
+    margin-top: 80px;
+    color: white;
+    @include mixin.flex-box_custom(center, center, 10px); 
+    flex-direction: column;
+
+    .boxNav {
+        @include mixin.flex-box_custom(center, center, 40px); 
+        font-size: 15px;
+
+        :hover {
+            opacity: 0.4;
+            cursor: pointer;
+        }
+    }
+
+}

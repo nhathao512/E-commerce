@@ -1,0 +1,72 @@
+@use '../../assets/styles/mixin.module.scss' as mixin;
+
+.boxImg {
+    width: 300px;
+    height: 100%;
+    position: relative;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &:hover .showImageWhenHover {
+        opacity: 1;
+        transition: opacity 0.5s;
+    }
+    .showImageWhenHover {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    &:hover .showFunctionWhenHover {
+        opacity: 1;
+        right: 20px;
+        transition: opacity 0.5s right 1s;
+    }
+
+    .showFunctionWhenHover {
+        opacity: 0;
+        position: absolute;
+        bottom: 20px;
+        right: 0;
+        background-color: white;
+    }
+
+    .boxIcon {
+        width: 40px;
+        height: 40px;
+        @include mixin.flex-box_custom(center, center, 0); 
+
+        img {
+            width: 17px;
+            height: 17px;
+        }
+
+        &:hover {
+            background-color: #dfdada;
+            transition: background-color 0.5s;
+        }
+
+    }
+
+
+}
+.title {
+    font-size: 16px;
+    color: #222;
+    margin: 6px 0px;
+}
+
+.priceClass {
+    font-size: 14px;
+    color: #555;
+    font-weight: 400;
+}
+
+

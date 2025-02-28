@@ -1,7 +1,10 @@
-function Menu({ content, href }) {
-  return (
-    <div className="menu pt-[10px] text-[15px] text-[#333]">{content}</div>
-  );
+import styles from "../styles.module.scss";
+
+function Menu({ content, href, setIsOpen }) {  // Destructure props here
+    const { menu } = styles;
+    return (
+        <div className={menu} onClick={() => setIsOpen(true)}>{content}</div>
+    );
 }
 
 export default Menu;

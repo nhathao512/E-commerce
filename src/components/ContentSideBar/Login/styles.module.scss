@@ -1,0 +1,50 @@
+@use '../../../assets/styles/mixin.module.scss' as mixin;
+
+.container {
+    padding: 20px 20px 0 20px;
+
+    .title {
+        font-size: 18px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .boxRememberMe {
+        margin-bottom: 20px;
+
+        input {
+            margin-right: 15px;
+        }
+
+        span {
+            font-size: 14px;
+        }
+    }
+
+        
+    .LostPw {
+        margin-top: 20px;
+        text-align: center;
+        font-size: 14px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .LoginAccess {
+        @include mixin.btn(308px, 41px, #333, 3px);
+        color: #fff;
+        font-size: 14px;
+        font-weight: 300;
+        //  padding: 13px 45px;
+        cursor: pointer;
+      
+        &:hover {
+          background-color: transparent;
+          color: #333;
+          border: 1px solid #333;
+          transition: background-color 300ms;
+        }
+    }
+}
